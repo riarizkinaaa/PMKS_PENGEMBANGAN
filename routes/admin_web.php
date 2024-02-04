@@ -113,6 +113,7 @@ Route::prefix('pimpinan')->middleware('auth', 'cek_login:2')->group(function () 
 // Awal Route Hak Akses Superadmin
 Route::prefix('superadmin')->middleware('auth', 'cek_login:1')->group(function () {
 	Route::view('dashboard', 'superadmin.dashboard')->name('superadmin');
+	Route::view('peta', 'superadmin.peta')->name('peta');
 	Route::resource('userlog', \App\Http\Controllers\Admin\UserlogController::class);
 	Route::resource('dusun', \App\Http\Controllers\Admin\DusunController::class);
 	Route::resource('desa', \App\Http\Controllers\Admin\DesaController::class);
